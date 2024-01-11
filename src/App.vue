@@ -4,7 +4,7 @@
       <ul>
         <li class="nav-item">
           <img class="logo" src="./assets/build-a-bot-logo.png" alt="">
-          Built a bot
+          Built-a-Bot
         </li>
       </ul>
     </nav>
@@ -29,6 +29,17 @@ export default {
 body {
   background: linear-gradient(to bottom, #595, #999);
   background-attachment: fixed;
+}
+
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+</style>
+
+<style scoped>
+.content>>>.robot-name {
+  color: red;
+  border: 2px solid;
 }
 
 header {
@@ -61,9 +72,5 @@ main {
   width: 1024px;
   min-height: 300px;
   border-radius: 1%;
-}
-
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
 }
 </style>
