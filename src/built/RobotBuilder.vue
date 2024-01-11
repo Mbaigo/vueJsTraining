@@ -60,6 +60,7 @@
 
 <script>
 import availableParts from '../data/parts';
+import createdHookMixin from './created-hook-mixin';
 
 export function getPreviousValidIndex(index, length) {
   const deprecatedIndex = index - 1;
@@ -84,6 +85,7 @@ export default {
       selectedRightArmIndex: 0,
     };
   },
+  mixins: [createdHookMixin],
   computed: {
     saleBorderClass() {
       return this.selectedRobot.head.onSale ? 'sale-border' : '';
@@ -180,7 +182,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .part {
   position: relative;
   width: 165px;
@@ -188,8 +190,10 @@ export default {
   border: 3px solid #aaa;
 }
 
-.part img {
-  width: 165px;
+.part {
+  img {
+    width: 165px;
+  }
 }
 
 .top-row {
