@@ -20,6 +20,7 @@ module.exports = {
     'linebreak-style': 0,
     'operator-linebreak': 0,
     camelcase: 'off',
+    'max-len': 'off',
   },
 
   // eslint-disable-next-line no-dupe-keys
