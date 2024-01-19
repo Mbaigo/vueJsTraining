@@ -8,6 +8,9 @@
         </li>
       </ul>
     </nav>
+    <button @click="onChangeUserName()">Change</button>
+    <button @click="onChangedUserName()">Changed</button>
+    <div>User: {{ user.userName }}</div>
   </header>
   <main>
     <RobotBuilder />
@@ -25,6 +28,31 @@ export default {
     RobotBuilder,
     // Search,
   },
+  data() {
+    return {
+      user: { userName: 'Select' },
+    };
+  },
+  methods: {
+    // modification de l'attribu userName de l'objet user de la section data
+    onChangeUserName() {
+      this.user.userName = 'Charity';
+    },
+    // modification de l'objet user globalement. Cette modification n'impact que le component courant et pas les references de user dans les autres car le user injecté est celui déclaré dans la section data
+    onChangedUserName() {
+      this.user = { userName: 'Charities' };
+    },
+  },
+  /* afin de reutiliser les données de la section Data, il faut considérer la section provide comme une fonction et non un objet comme définit à la ligne 40 */
+  provide() {
+    return {
+      person: this.user,
+    };
+  },
+  /*  provide: {
+    userName: 'Salut',
+  }, */
+
 };
 </script>
 
