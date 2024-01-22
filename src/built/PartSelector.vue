@@ -1,7 +1,6 @@
 <!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
 <template>
   <div class="part" :class="position">
-    <div>{{ person.userName }}</div>
     <img :src="selectedPart.src" title="arm" alt="" @click="showPartInfo = !showPartInfo" />
     <button @click="selectPreviousPart()" class="prev-selector"> </button>
     <button @click="selectNextPart()" class="next-selector"> </button>
@@ -40,7 +39,6 @@ export default {
   data() {
     return { selectedPartIndex: 0, showPartInfo: false };
   },
-  inject: ['person'],
   computed: {
     selectedPart() {
       return this.parts[this.selectedPartIndex];
