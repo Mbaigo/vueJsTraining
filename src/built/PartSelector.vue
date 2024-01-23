@@ -1,7 +1,15 @@
 <!-- eslint-disable vuejs-accessibility/click-events-have-key-events -->
 <template>
   <div class="part" :class="position">
-    <img @click="showPartInfo()" :src="selectedPart.src" title="arm" alt="" />
+    <router-link :to="{
+      name: 'Parts',
+      params: {
+        id: selectedPart.id,
+        partType: selectedPart.type,
+      }
+    }">
+      <img @click="showPartInfo()" :src="selectedPart.src" title="arm" alt="" />
+    </router-link>
     <button @click="selectPreviousPart()" class="prev-selector"> </button>
     <button @click="selectNextPart()" class="next-selector"> </button>
     <span class="sale" v-show="selectedPart.onSale">Sale!</span>
@@ -52,7 +60,13 @@ export default {
   },
   methods: {
     showPartInfo() {
-      this.$router.push('/parts');
+      this.$router.push({
+        name: 'Parts',
+        params: {
+          id: this.selectedPart.id,
+          partType: this.selectedPart.type,
+        },
+      });
     },
     emitSelectedPart() {
       this.$emit('partSelected', this.selectedPart);
