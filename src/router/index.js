@@ -2,6 +2,7 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import HomePage from '../home/HomePage.vue';
 import RobotBuilder from '../built/RobotBuilder.vue';
+import PartInfo from '../parts/PartInfo.vue';
 
 export default createRouter({
   history: createWebHashHistory(),
@@ -14,5 +15,10 @@ export default createRouter({
     path: '/build',
     name: 'Build',
     component: RobotBuilder,
+  },
+  {
+    path: '/parts',
+    name: 'Parts',
+    component: PartInfo,
   }],
 });
