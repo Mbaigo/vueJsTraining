@@ -3,8 +3,11 @@
     <nav>
       <ul>
         <li class="nav-item">
-          <img class="logo" src="./assets/build-a-bot-logo.png" alt="">
-          Built-a-Bot
+          <router-link class="nav-link" :to="{ name: 'Home' }">
+            <img class="logo" src="./assets/build-a-bot-logo.png" alt="">
+            Built-a-Bot
+
+          </router-link>
         </li>
       </ul>
     </nav>
@@ -68,5 +71,10 @@ main {
   width: 1024px;
   min-height: 300px;
   border-radius: 1%;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: inherit;
 }
 </style>
