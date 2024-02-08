@@ -29,8 +29,6 @@ function getNextValidIndex(index, length) {
 }
 
 export default {
-  /* propriété qui sera utilisée dans les autres
-  composant qui souhaitent utiliser ce présent component */
   props: {
     parts: {
       type: Array,
