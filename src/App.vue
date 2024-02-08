@@ -16,12 +16,17 @@
       </ul>
     </nav>
   </header>
-  <main>
-    <RouterView />
-  </main>
+  <div class="container">
+    <aside class="aside">
+      <router-view name="sidebar" />
+    </aside>
+    <main>
+      <router-view />
+    </main>
+  </div>
 </template>
 
-<script>
+<script scoped>
 
 export default {
   name: 'App',
@@ -40,14 +45,21 @@ body {
 </style>
 
 <style scoped>
-/* .content>>>.robot-name {
-  color: red;
-  border: 2px solid;
-} */
+#app {
+  font-family: 'Avenir', Arial, Helvetica, sans-serif;
+}
+
+main {
+  padding: 30px;
+  background-color: white;
+  width: 964px;
+  min-height: 300px;
+  border-radius: 1%;
+}
 
 header {
   background-color: #ebe4e4;
-  width: 1084px;
+  width: 1184px;
   margin: 0 auto;
 }
 
@@ -68,15 +80,6 @@ ul {
   height: 30px;
 }
 
-main {
-  margin: 0 auto;
-  padding: 30px;
-  background-color: white;
-  width: 1024px;
-  min-height: 300px;
-  border-radius: 1%;
-}
-
 .nav-link {
   text-decoration: none;
   color: inherit;
@@ -84,5 +87,20 @@ main {
 
 .router-link-active {
   color: white;
+}
+
+.container {
+  display: flex;
+  margin: 10px auto 0 auto;
+  justify-content: center;
+}
+
+.aside {
+  padding: 30px;
+  margin-right: 2px;
+  background-color: #aaa;
+  width: 100px;
+  min-height: 300px;
+  border-radius: 2%;
 }
 </style>
